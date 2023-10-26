@@ -1,7 +1,11 @@
-const TarefaModel = require("../models/tarefa");
-const tarefas = [];
-function getTarefas(req, res) {
-  res.render("tarefas", { tarefas });
+const TarefaModel = require("../models/TarefaModel");
+
+
+const tarefas = TarefaModel.listarTarefas;
+
+async function getTarefas(req, res) {
+  console.log(await TarefaModel.listarTarefas());
+ // res.render("tarefas", { tarefas });
 }
 function addTarefa(req, res) {
   const { title } = req.body;
