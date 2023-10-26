@@ -6,7 +6,6 @@ class TarefaModel {
   }
 
   static async listarTarefas(){
-    console.log("teste");
     const db = require("./DatabaseModel");
     let req = await db.query("SELECT * FROM tarefa");
     console.log(req);
